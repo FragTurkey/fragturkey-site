@@ -625,7 +625,7 @@ body::before {
    ============================================================ */
 .about-inner {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr auto;
   gap: 48px;
   align-items: start;
 }
@@ -634,7 +634,6 @@ body::before {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-self: end;
 }
 
 .about-raider {
@@ -684,7 +683,7 @@ body::before {
 
 .social-grid {
   display: grid;
-  grid-template-columns: repeat(3, 64px);
+  grid-template-columns: repeat(3, 80px);
   gap: 6px;
   width: fit-content;
 }
@@ -695,8 +694,8 @@ body::before {
   align-items: center;
   justify-content: center;
   gap: 4px;
-  width: 64px;
-  height: 64px;
+  width: 80px;
+  height: 80px;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
