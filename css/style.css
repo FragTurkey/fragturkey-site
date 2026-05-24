@@ -557,7 +557,7 @@ body::before {
    ============================================================ */
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 12px;
 }
 
@@ -677,9 +677,9 @@ body::before {
 
 .social-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  max-width: 240px;
+  grid-template-columns: repeat(3, 64px);
+  gap: 6px;
+  width: fit-content;
 }
 
 .social-link {
@@ -687,14 +687,14 @@ body::before {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 5px;
-  padding: 12px 6px;
-  aspect-ratio: 1;
+  gap: 4px;
+  width: 64px;
+  height: 64px;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   color: var(--text-muted);
-  font-size: 0.55rem;
+  font-size: 0.5rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -865,10 +865,6 @@ body::before {
     width: 160px;
   }
 
-  .social-grid {
-    grid-template-columns: repeat(6, 1fr);
-  }
-
   .video-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -955,10 +951,6 @@ body::before {
     gap: 40px;
   }
 
-  .social-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
   /* Lightbox */
   .lightbox-prev { left: 8px; }
   .lightbox-next { right: 8px; }
@@ -974,10 +966,6 @@ body::before {
 @media (max-width: 400px) {
   .photo-grid {
     grid-template-columns: 1fr;
-  }
-
-  .social-grid {
-    grid-template-columns: repeat(2, 1fr);
   }
 
   .hero-title {
