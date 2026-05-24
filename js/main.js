@@ -31,15 +31,14 @@
 // Set to null to hide this section entirely.
 
 const raiderPhoto = { src: 'photos/my-raider.jpg', alt: 'My current raider' };
-// const raiderPhoto = { src: 'photos/my-raider.jpg', alt: 'My current raider' };
 
 
 // ---- PHOTOS ------------------------------------------------
 // Add your screenshot objects here.
 
 const photos = [
-  // Example (remove and replace with your real photos):
-  // { src: 'photos/screenshot-01.jpg', alt: 'ARC Raiders wasteland at dawn' },
+  { src: 'photos/ARC Raiders 2026.05.21 - 22.14.39 - Edit.jpg', alt: 'The Practice Range' },
+  { src: 'photos/ARC Raiders 2026.05.22 - 17.47.35 - Edit.jpg', alt: 'The southeast landscape of Buried City' },
   { src: 'photos/ARC Raiders 2026.05.23 - 02.48.14 - Edit.jpg', alt: 'Lieutenant Dan captured on top of the Control Tower' },
 ];
 
