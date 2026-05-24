@@ -625,9 +625,30 @@ body::before {
    ============================================================ */
 .about-inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 64px;
   align-items: start;
+}
+
+.about-raider {
+  width: 200px;
+}
+
+.about-raider img {
+  width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  display: block;
+}
+
+.about-raider-label {
+  font-size: 0.6rem;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  text-align: center;
+  margin-top: 10px;
 }
 
 .about-text .section-title {
@@ -657,7 +678,8 @@ body::before {
 .social-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 8px;
+  max-width: 240px;
 }
 
 .social-link {
@@ -665,14 +687,14 @@ body::before {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 18px 8px;
+  gap: 5px;
+  padding: 12px 6px;
   aspect-ratio: 1;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   color: var(--text-muted);
-  font-size: 0.6rem;
+  font-size: 0.55rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -686,8 +708,8 @@ body::before {
 }
 
 .social-link svg {
-  width: 22px;
-  height: 22px;
+  width: 16px;
+  height: 16px;
   fill: currentColor;
   opacity: 0.7;
   transition: opacity 0.2s;
@@ -837,6 +859,10 @@ body::before {
   .about-inner {
     grid-template-columns: 1fr;
     gap: 48px;
+  }
+
+  .about-raider {
+    width: 160px;
   }
 
   .social-grid {

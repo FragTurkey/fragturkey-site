@@ -25,6 +25,15 @@
 // at /api/videos — the API key never appears in client code.
 
 
+// ---- RAIDER PHOTO ------------------------------------------
+// Update src whenever your raider changes.
+// Drop the file in the photos/ folder and update the filename below.
+// Set to null to hide this section entirely.
+
+const raiderPhoto = null;
+// const raiderPhoto = { src: 'photos/my-raider.jpg', alt: 'My current raider' };
+
+
 // ---- PHOTOS ------------------------------------------------
 // Add your screenshot objects here.
 
@@ -166,6 +175,23 @@ function renderPhotos() {
 }
 
 
+function renderRaiderPhoto() {
+  const container = document.getElementById('raiderPhotoContainer');
+  if (!container) return;
+
+  if (!raiderPhoto) {
+    container.style.display = 'none';
+    return;
+  }
+
+  container.innerHTML = `
+    <div class="about-raider">
+      <img src="${raiderPhoto.src}" alt="${raiderPhoto.alt}" loading="lazy" />
+      <p class="about-raider-label">Current Raider</p>
+    </div>`;
+}
+
+
 function renderSocial() {
   const grid = document.getElementById('socialGrid');
   if (!grid) return;
@@ -271,4 +297,5 @@ document.getElementById('footerYear').textContent = new Date().getFullYear();
 
 fetchAndRenderVideos();
 renderPhotos();
+renderRaiderPhoto();
 renderSocial();
