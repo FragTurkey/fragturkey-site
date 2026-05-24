@@ -625,7 +625,7 @@ body::before {
    ============================================================ */
 .about-inner {
   display: grid;
-  grid-template-columns: 1fr 1fr auto;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 48px;
   align-items: start;
 }
@@ -634,10 +634,14 @@ body::before {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
 }
 
 .about-raider {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .about-raider img {
@@ -645,6 +649,7 @@ body::before {
   border-radius: var(--radius);
   border: 1px solid var(--border);
   display: block;
+  margin: 0 auto;
 }
 
 .about-raider-label {
@@ -683,9 +688,9 @@ body::before {
 
 .social-grid {
   display: grid;
-  grid-template-columns: repeat(3, 80px);
+  grid-template-columns: repeat(3, 1fr);
   gap: 6px;
-  width: fit-content;
+  width: 100%;
 }
 
 .social-link {
@@ -694,8 +699,7 @@ body::before {
   align-items: center;
   justify-content: center;
   gap: 4px;
-  width: 80px;
-  height: 80px;
+  aspect-ratio: 1;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
