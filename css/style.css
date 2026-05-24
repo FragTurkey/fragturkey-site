@@ -948,7 +948,6 @@ body::before {
 
   /* Photos */
   .photo-grid {
-    grid-template-columns: repeat(2, 1fr);
     gap: 8px;
   }
 
@@ -970,9 +969,6 @@ body::before {
 
 /* --- Small mobile (max 400px) --- */
 @media (max-width: 400px) {
-  .photo-grid {
-    grid-template-columns: 1fr;
-  }
 
   .hero-title {
     font-size: clamp(2rem, 14vw, 3rem);
