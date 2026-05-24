@@ -31,7 +31,7 @@
 const photos = [
   // Example (remove and replace with your real photos):
   // { src: 'photos/screenshot-01.jpg', alt: 'ARC Raiders wasteland at dawn' },
-  { src: 'ARC Raiders 2026.05.23 - 02.48.14 - Edit.jpg', alt: 'Lieutenant Dan captured on top of the Control Tower' },
+  { src: 'photos/ARC Raiders 2026.05.23 - 02.48.14 - Edit.jpg', alt: 'Lieutenant Dan captured on top of the Control Tower' },
 ];
 
 
