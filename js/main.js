@@ -30,7 +30,7 @@
 // Drop the file in the photos/ folder and update the filename below.
 // Set to null to hide this section entirely.
 
-const raiderPhoto = null;
+const raiderPhoto = { src: 'photos/my-raider.jpg', alt: 'My current raider' };
 // const raiderPhoto = { src: 'photos/my-raider.jpg', alt: 'My current raider' };
 
 
