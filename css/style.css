@@ -625,19 +625,20 @@ body::before {
    ============================================================ */
 .about-inner {
   display: grid;
-  grid-template-columns: 1.5fr auto auto;
-  gap: 64px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 48px;
   align-items: start;
 }
 
 .about-social {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
+  justify-self: end;
 }
 
 .about-raider {
-  width: 260px;
+  width: 100%;
 }
 
 .about-raider img {
@@ -867,12 +868,8 @@ body::before {
     gap: 48px;
   }
 
-  .about-raider {
-    width: 200px;
-  }
-
   .about-social {
-    align-items: flex-start;
+    justify-self: start;
   }
 
   .video-grid {
