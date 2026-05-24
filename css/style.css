@@ -280,8 +280,8 @@ body::before {
 }
 
 .hero-logo-img {
-  width: clamp(96px, 15vw, 144px);
-  height: clamp(96px, 15vw, 144px);
+  width: clamp(192px, 30vw, 288px);
+  height: clamp(192px, 30vw, 288px);
   border-radius: 50%;
   object-fit: cover;
   object-position: center 30%;
@@ -916,8 +916,8 @@ body::before {
   }
 
   .hero-logo-img {
-    width: 80px;
-    height: 80px;
+    width: 160px;
+    height: 160px;
   }
 
   .hero-title {
