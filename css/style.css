@@ -919,13 +919,18 @@ body::before {
     padding-bottom: 64px;
   }
 
+  .hero-content {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
   .hero-logo-img {
     width: 160px;
     height: 160px;
   }
 
   .hero-title {
-    font-size: clamp(2rem, 12vw, 3.5rem);
+    font-size: clamp(1.75rem, 9vw, 3rem);
   }
 
   .hero-subtitle {
@@ -975,6 +980,6 @@ body::before {
 @media (max-width: 400px) {
 
   .hero-title {
-    font-size: clamp(2rem, 14vw, 3rem);
+    font-size: clamp(1.5rem, 9vw, 2.5rem);
   }
 }
