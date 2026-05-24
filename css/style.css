@@ -770,6 +770,14 @@ body::before {
   letter-spacing: 0.04em;
 }
 
+.footer-version {
+  font-size: 0.6rem;
+  color: var(--text-faint);
+  letter-spacing: 0.1em;
+  opacity: 0.4;
+  margin-top: 4px;
+}
+
 /* ============================================================
    LIGHTBOX
    ============================================================ */
