@@ -187,7 +187,7 @@ function renderRaiderPhoto() {
   container.innerHTML = `
     <div class="about-raider">
       <img src="${raiderPhoto.src}" alt="${raiderPhoto.alt}" loading="lazy" />
-      <p class="about-raider-label">Current Raider</p>
+      <p class="about-raider-label">FragTurkey</p>
     </div>`;
 }
 
