@@ -21,12 +21,8 @@
 
 
 // ---- YOUTUBE API -------------------------------------------
-// API key is restricted to fragturkey.com in Google Cloud Console.
-
-const YT_API_KEY     = 'AIzaSyD2mBmF-8IGrHSdgtTpODaixJFq4cuBaT0';
-const YT_CHANNEL_ID  = 'UCUTWQkIAi1G2wxRz7tgvmHA';
-const YT_PLAYLIST_ID = 'UU' + YT_CHANNEL_ID.slice(2); // uploads playlist
-const YT_MAX_RESULTS = 12;
+// Videos are fetched via a server-side Cloudflare Pages Function
+// at /api/videos — the API key never appears in client code.
 
 
 // ---- PHOTOS ------------------------------------------------
@@ -94,11 +90,7 @@ async function fetchAndRenderVideos() {
     </div>`).join('');
 
   try {
-    const url = `https://www.googleapis.com/youtube/v3/playlistItems`
-      + `?part=snippet`
-      + `&playlistId=${YT_PLAYLIST_ID}`
-      + `&maxResults=${YT_MAX_RESULTS}`
-      + `&key=${YT_API_KEY}`;
+    const url = '/api/videos';
 
     const res  = await fetch(url);
     if (!res.ok) throw new Error(`API responded with ${res.status}`);
