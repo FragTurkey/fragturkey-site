@@ -563,7 +563,7 @@ body::before {
 
 .photo-item {
   position: relative;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 3 / 2;
   overflow: hidden;
   border-radius: var(--radius);
   background: var(--bg-card);
