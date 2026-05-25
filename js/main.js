@@ -37,10 +37,10 @@ const raiderPhoto = { src: 'photos/my-raider.jpg', alt: 'My current raider' };
 // Add your screenshot objects here.
 
 const photos = [
-  { src: 'photos/ARC Raiders 2026.05.21 - 22.14.39 - Edit.jpg', alt: 'The Practice Range' },
-  { src: 'photos/ARC Raiders 2026.05.22 - 17.47.35 - Edit.jpg', alt: 'The southeast landscape of Buried City' },
-  { src: 'photos/ARC Raiders 2026.05.23 - 02.48.14 - Edit.jpg', alt: 'Captured raider on top of the Control Tower' },
   { src: 'photos/ARC Raiders 2026.05.24 - 22.48.45.19- Edit.jpg', alt: 'Southern Blue Gate' },
+  { src: 'photos/ARC Raiders 2026.05.23 - 02.48.14 - Edit.jpg', alt: 'Captured raider on top of the Control Tower' },
+  { src: 'photos/ARC Raiders 2026.05.22 - 17.47.35 - Edit.jpg', alt: 'The southeast landscape of Buried City' },
+  { src: 'photos/ARC Raiders 2026.05.21 - 22.14.39 - Edit.jpg', alt: 'The Practice Range' },
 ];
 
 
