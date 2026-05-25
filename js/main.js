@@ -8,14 +8,12 @@
    needed. New videos appear on the site as soon as they go live
    on the channel.
 
-   HOW TO ADD PHOTOS
-   -----------------
-   1. Place your screenshot files in the `photos/` folder.
-   2. Add an object to the `photos` array below:
-   {
-     src: 'photos/your-filename.jpg',
-     alt: 'A short description of the photo',
-   }
+   PHOTOS
+   ------
+   Photos are loaded automatically from photos/manifest.json.
+   To publish new photos, export from Lightroom Classic to
+   ~/Pictures/FragTurkey/ — the photo watcher handles everything
+   else (manifest generation, git commit, Cloudflare deploy).
 
    ============================================================ */
 
@@ -34,14 +32,10 @@ const raiderPhoto = { src: 'photos/my-raider.jpg', alt: 'My current raider' };
 
 
 // ---- PHOTOS ------------------------------------------------
-// Add your screenshot objects here.
+// Loaded dynamically from photos/manifest.json.
+// Do not edit this array — it is managed by the photo watcher script.
 
-const photos = [
-  { src: 'photos/ARC Raiders 2026.05.24 - 22.48.45.19- Edit.jpg', alt: 'Southern Blue Gate' },
-  { src: 'photos/ARC Raiders 2026.05.23 - 02.48.14 - Edit.jpg', alt: 'Captured raider on top of the Control Tower' },
-  { src: 'photos/ARC Raiders 2026.05.22 - 17.47.35 - Edit.jpg', alt: 'The southeast landscape of Buried City' },
-  { src: 'photos/ARC Raiders 2026.05.21 - 22.14.39 - Edit.jpg', alt: 'The Practice Range' },
-];
+let photos = [];
 
 
 // ---- SOCIAL LINKS ------------------------------------------
@@ -149,18 +143,17 @@ function renderPhotos() {
   if (photos.length === 0) {
     grid.innerHTML = `
       <div class="photo-empty">
-        <p>No photos yet.</p>
-        <p>Add screenshots to the <code>photos/</code> folder and register them in <code>js/main.js</code>.</p>
+        <p>No photos yet. Check back soon.</p>
       </div>`;
     return;
   }
 
   grid.innerHTML = photos.map((p, i) => `
-    <div class="photo-item" data-index="${i}" role="button" tabindex="0" aria-label="View photo: ${p.alt}">
-      <img src="${p.src}" alt="${p.alt}" loading="lazy" />
-      ${p.alt ? `
+    <div class="photo-item" data-index="${i}" role="button" tabindex="0" aria-label="View photo: ${p.caption}">
+      <img src="${p.src}" alt="${p.caption}" loading="lazy" />
+      ${p.caption ? `
         <div class="photo-overlay">
-          <p class="photo-caption">${p.alt}</p>
+          <p class="photo-caption">${p.caption}</p>
         </div>` : ''}
     </div>
   `).join('');
@@ -227,8 +220,8 @@ function closeLightbox() {
 function updateLightboxImage() {
   const photo = photos[currentPhotoIndex];
   document.getElementById('lightboxImg').src = photo.src;
-  document.getElementById('lightboxImg').alt = photo.alt || '';
-  document.getElementById('lightboxCaption').textContent = photo.alt || '';
+  document.getElementById('lightboxImg').alt = photo.caption || '';
+  document.getElementById('lightboxCaption').textContent = photo.caption || '';
 }
 
 function lightboxPrev() {
@@ -295,7 +288,19 @@ document.getElementById('footerYear').textContent = new Date().getFullYear();
    INIT
    ============================================================ */
 
+async function loadAndRenderPhotos() {
+  try {
+    const res = await fetch('photos/manifest.json');
+    if (!res.ok) throw new Error(`manifest.json responded with ${res.status}`);
+    photos = await res.json();
+  } catch (err) {
+    console.warn('Could not load photo manifest:', err);
+    photos = [];
+  }
+  renderPhotos();
+}
+
 fetchAndRenderVideos();
-renderPhotos();
+loadAndRenderPhotos();
 renderRaiderPhoto();
 renderSocial();
