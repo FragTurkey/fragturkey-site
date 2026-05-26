@@ -34,7 +34,9 @@ const raiderPhoto = { src: 'photos/my-raider.jpg', alt: 'My current raider' };
 // ---- PHOTOS ------------------------------------------------
 // Loaded dynamically from photos/manifest.json.
 // Do not edit this array — it is managed by the photo watcher script.
+// Adjust PHOTO_LIMIT to show more or fewer photos on the page.
 
+const PHOTO_LIMIT = 24;
 let photos = [];
 
 
@@ -292,7 +294,8 @@ async function loadAndRenderPhotos() {
   try {
     const res = await fetch('photos/manifest.json');
     if (!res.ok) throw new Error(`manifest.json responded with ${res.status}`);
-    photos = await res.json();
+    const all = await res.json();
+    photos = all.slice(0, PHOTO_LIMIT);
   } catch (err) {
     console.warn('Could not load photo manifest:', err);
     photos = [];
